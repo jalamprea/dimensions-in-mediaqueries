@@ -33,10 +33,12 @@ var matched = dim.dimensionsIn(dimensions, styles);
 console.log(matched); // => []
 ```
 
-This package internally depend of [css-mediaqueries]: https://github.com/ericf/css-mediaquery/
+This package internally depends of [css-mediaqueries]: https://github.com/ericf/css-mediaquery/
 
 License
 -------
 
 This software is free to use under the MIT license.
 See the [LICENSE file][] for license text and copyright information.
+
+[LICENSE file]: https://github.com/jalamprea/dimensions-in-mediaqueries/blob/master/LICENSE
