@@ -8,6 +8,7 @@ var expect  = require('chai').expect,
 describe('dim.dimensionsIn()', function () {
 	it('should generate a new array with dimensions found', function () {
 		
+		// http://mediag.com/news/popular-screen-resolutions-designing-for-all/
 		const dimensions = [
 		    { width: 5120, height: 3000 }, // MAC 5K Retina
 		    { width: 3840, height: 3000 }, // 4K

@@ -25,6 +25,7 @@ var fs = require('fs');
 var dim = require('dimensions-in-mediaqueries');
 
 var dimensions = [
+	{ width: 2560, height: 1440 },
 	{ width: 1280, height: 960 },
 	{ width: 960, height: 720 },
 ];
@@ -33,7 +34,7 @@ var dim = require('dimensions-in-mediaqueries');
 
 var matched = dim.dimensionsIn(dimensions, styles);
 
-console.log(matched); // => []
+console.log(matched); // => [] array with matched dimensions found in CSS
 ```
 
 This package internally depends of [css-mediaqueries]: https://github.com/ericf/css-mediaquery/
