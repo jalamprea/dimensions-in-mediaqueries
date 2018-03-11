@@ -29,5 +29,6 @@ describe('dim.dimensionsIn()', function () {
 		expect(res).to.be.an.instanceof(Array);
 		expect(res).to.have.lengthOf.above(1);
 
+		console.log(res);
 	});
 });
