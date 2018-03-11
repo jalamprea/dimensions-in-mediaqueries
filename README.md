@@ -1,5 +1,8 @@
 # dimensions-in-mediaqueries
 
+[![Build Status](https://travis-ci.org/jalamprea/dimensions-in-mediaqueries?branch=master)](https://travis-ci.org/jalamprea/dimensions-in-mediaqueries)
+[![Dependency Status](https://beta.gemnasium.com/badges/github.com/jalamprea/dimensions-in-mediaqueries.svg)](https://beta.gemnasium.com/projects/github.com/jalamprea/dimensions-in-mediaqueries)
+
 Find what set of dimensions match with mediaqueries found in a CSS string
 
 
