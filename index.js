@@ -23,6 +23,12 @@ function dimensionsIn(dimensions, css) {
     let ast = null;
     for (let i = matches.length - 1; i >= 0; i--) {
         ast = mediaQuery.parse(matches[i]);
+
+        if(ast[0].expressions.length===0) {
+            console.log('No expressions found on', ast[0]);
+            continue;
+        }
+        
         let exp = ast[0].expressions[0];
         let k = 0;
 
