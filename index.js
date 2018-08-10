@@ -22,7 +22,11 @@ function dimensionsIn(dimensions, css) {
     let keep = [];
     let ast = null;
     for (let i = matches.length - 1; i >= 0; i--) {
-        ast = mediaQuery.parse(matches[i]);
+        mq = matches[i];
+        if(mq.indexOf('min-w')<0 && mq.indexOf('max-w')<0) {
+            continue;
+        }
+        ast = mediaQuery.parse(mq);
 
         if(ast[0].expressions.length===0) {
             console.log('No expressions found on', ast[0]);
