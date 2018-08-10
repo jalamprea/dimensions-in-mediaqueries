@@ -21,6 +21,7 @@ function dimensionsIn(dimensions, css) {
 
     let keep = [];
     let ast = null;
+    let mq = null;
     for (let i = matches.length - 1; i >= 0; i--) {
         mq = matches[i];
         if(mq.indexOf('min-w')<0 && mq.indexOf('max-w')<0) {
