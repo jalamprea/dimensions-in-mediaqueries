@@ -7,7 +7,10 @@ function dimensionsIn(dimensions, css) {
 
     let reg = new RegExp("(@media)(.*?)(\{)", 'g');
     let matches = css.match(reg);
-
+    if (!matches) {
+        return [];
+    }
+    
     let screens = matches.filter((rule, index) => {
         rule = rule.replace(': ', ':');
         if (rule.indexOf('print')>0 || matches.indexOf(rule)!==index)
