@@ -30,6 +30,9 @@ function dimensionsIn(dimensions, css) {
         if(mq.indexOf('min-w')<0 && mq.indexOf('max-w')<0) {
             continue;
         }
+        if(mq.indexOf('device-pixel-ratio')>0) {
+            continue;
+        }
         ast = mediaQuery.parse(mq);
 
         if(ast[0].expressions.length===0) {
