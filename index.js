@@ -27,11 +27,14 @@ function dimensionsIn(dimensions, css) {
     let mq = null;
     for (let i = matches.length - 1; i >= 0; i--) {
         mq = matches[i];
-        if(mq.indexOf('min-w')<0 && mq.indexOf('max-w')<0) {
+        if (mq.indexOf('min-w')<0 && mq.indexOf('max-w')<0) {
             continue;
         }
-        if(mq.indexOf('device-pixel-ratio')>0) {
+        if (mq.indexOf('device-pixel-ratio')>0) {
             continue;
+        }
+        if (mq.indexOf('2 / 1')>0) {
+            mq = mq.replace('2 / 1', '2/1');
         }
         ast = mediaQuery.parse(mq);
 
