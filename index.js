@@ -36,6 +36,12 @@ function dimensionsIn(dimensions, css) {
         if (mq.indexOf('2 / 1')>0) {
             mq = mq.replace('2 / 1', '2/1');
         }
+
+        // avoid errors like screen and (max-width:) in claraluzroldan.com.co
+        if (mq.indexOf(':)')>0) {
+            continue;
+        }
+        
         ast = mediaQuery.parse(mq);
 
         if(ast[0].expressions.length===0) {
