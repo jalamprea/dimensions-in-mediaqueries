@@ -22,7 +22,7 @@ describe('dim.dimensionsIn()', function () {
 		    { width: 320, height: 3000 } // iPhone
 		];
 
-		var css = fs.readFileSync('./test/test-claraluzroldan.css').toString();
+		var css = fs.readFileSync('./test/sample.min.css').toString();
 
 		var res = dim.dimensionsIn(dimensions, css);
 		
