@@ -22,13 +22,13 @@ describe('dim.dimensionsIn()', function () {
 		    { width: 320, height: 3000 } // iPhone
 		];
 
-		var css = fs.readFileSync('./test/sample.min.css').toString();
+		var css = fs.readFileSync('./test/test-claraluzroldan.css').toString();
 
 		var res = dim.dimensionsIn(dimensions, css);
 		
 		expect(res).to.be.an.instanceof(Array);
-		expect(res).to.have.lengthOf.above(1);
+		expect(res).to.have.lengthOf.above(0);
 
-		console.log(res);
+		console.log('Resolutions:', res);
 	});
 });

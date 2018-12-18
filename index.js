@@ -41,7 +41,12 @@ function dimensionsIn(dimensions, css) {
         if (mq.indexOf(':)')>0) {
             continue;
         }
-        
+
+
+        if(mq.indexOf('min-')===0 || mq.indexOf('max-')===0) {
+            mq = '(' + mq;
+        }
+        // console.log('\nChecking rule:', mq);
         ast = mediaQuery.parse(mq);
 
         if(ast[0].expressions.length===0) {
@@ -52,19 +57,24 @@ function dimensionsIn(dimensions, css) {
         let exp = ast[0].expressions[0];
         let k = 0;
 
-        // console.log('Evaluating: ', matches[i]);
+        let _mq = mq;
+        let _mqValue = parseInt(exp.value.replace('px', ''));
+
+        // console.log('==> Evaluating: ', _mq);
         if(exp.modifier==='min') {
-            while( k < dimensions.length && mediaQuery.match(matches[i], {type:'screen', width: dimensions[k].width}) ) {
+            while( k < dimensions.length && mediaQuery.match(_mq, {type:'screen', width: dimensions[k].width}) ) {
                 k++;
             }
             k--;
         } else if(exp.modifier==='max') {
-            while( k < dimensions.length && !mediaQuery.match(matches[i], {type:'screen', width: dimensions[k].width}) ) {
+            // while( k < dimensions.length && !mediaQuery.match(_mq, {type:'screen', width: dimensions[k].width}) ) {
+            while( k < dimensions.length && _mqValue<dimensions[k].width ) {
                 k++;
             }
+            k--;
         }
         if(k > 0 && k < dimensions.length) {
-            // console.log('Match:', dimensions[k]);
+            // console.log(' - Match:', dimensions[k]);
             if (keep.indexOf(dimensions[k]) < 0) {
                 keep.push( dimensions[k] );
             }
