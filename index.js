@@ -42,10 +42,16 @@ function dimensionsIn(dimensions, css) {
             continue;
         }
 
-
+        // WTF?
         if(mq.indexOf('min-')===0 || mq.indexOf('max-')===0) {
             mq = '(' + mq;
         }
+
+        // (min-width:1440px + 24px * 4)
+        if (mq.search('px')>0 && mq.search(/px\)/)<0 ) {
+            mq = mq.replace(/px.*?\)/g, 'px)');
+        }
+
         // console.log('\nChecking rule:', mq);
         ast = mediaQuery.parse(mq);
 
